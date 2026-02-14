@@ -6,6 +6,7 @@ import io.modelcontextprotocol.spec.McpSchema.*;
 import org.springaicommunity.mcp.annotation.McpProgressToken;
 import org.springaicommunity.mcp.annotation.McpTool;
 import org.springaicommunity.mcp.annotation.McpToolParam;
+import org.springaicommunity.mcp.context.McpSyncRequestContext;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -22,7 +23,8 @@ public class WeatherService {
 
     @McpTool(description = "Get the temperature (in celsius) for a specific location")
     public String getTemperature(
-            McpSyncServerExchange exchange, // (1)
+            McpSyncServerExchange exchange,
+            McpSyncRequestContext context,// (1)
             @McpToolParam(description = "The location latitude") double latitude,
             @McpToolParam(description = "The location longitude") double longitude,
             @McpProgressToken int progressToken) { // (2)
@@ -42,6 +44,10 @@ public class WeatherService {
 
 
         String epicPoem = "MCP Client doesn't provide sampling capability.";
+
+        // Access progress token from context,
+        // It will be an integer when using MCP Inspector v0.20.0
+        Object pt = context.request().progressToken();
 
         if (exchange.getClientCapabilities().sampling() != null) {
             // 50% progress

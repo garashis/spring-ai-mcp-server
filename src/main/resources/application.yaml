@@ -1,13 +1,12 @@
 spring:
   application:
     name: spring-ai-mcp-server
-
   ai:
     mcp:
       server:
         name: my-mcp-server
 #        stdio: true
-        type: sync
+        type: SYNC
         annotation-scanner:
           enabled: true
         protocol: STREAMABLE
