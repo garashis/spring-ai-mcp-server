@@ -4,6 +4,7 @@ spring:
   ai:
     mcp:
       server:
+        request-timeout: 5000
         name: spring-ai-mcp-server
 #        stdio: true
         type: SYNC
