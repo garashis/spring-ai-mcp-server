@@ -4,7 +4,7 @@ spring:
   ai:
     mcp:
       server:
-        name: my-mcp-server
+        name: spring-ai-mcp-server
 #        stdio: true
         type: SYNC
         annotation-scanner:
@@ -14,3 +14,7 @@ spring:
 logging:
   level:
     org: DEBUG
+
+app:
+  config: "{name: 'Hello App', version: 'v1.0.0'}"
+  boolconfig: "{isEnabled: true}"

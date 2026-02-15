@@ -13,3 +13,8 @@ http://localhost:6274/
 
 ## Followed this blog
 https://spring.io/blog/2025/09/16/spring-ai-mcp-intro-blog
+
+## References:
+ - https://docs.spring.io/spring-ai/reference/api/mcp/mcp-annotations-server.html
+ - https://docs.spring.io/spring-ai/reference/api/mcp/mcp-streamable-http-server-boot-starter-docs.html
+ - https://modelcontextprotocol.io/sdk/java/mcp-server
